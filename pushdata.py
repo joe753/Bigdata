@@ -10,13 +10,14 @@ TABLE = "test"
 if not client.check_table(DATABASE, TABLE):
     print("Create table {0}.{1}".format(DATABASE, TABLE), file=sys.stderr)
 
-client.create_table(DATABASE, TABLE, [
-    {'name': 'songno', 'type': 'string', 'description': 'song id'},
-    {'name': 'title', 'type': 'string', 'description': 'song title'},
-    {'name': 'albumid', 'type': 'string', 'description': 'album id'}
-])
-        
-ttt = [ {'songno': '222', 'title': '홍2', 'albumid': '121212121'} ]
+    client.create_table(DATABASE, TABLE, [
+        {'name': 'songno', 'type': 'string', 'description': 'song id'},
+        {'name': 'title', 'type': 'string', 'description': 'song title'},
+        {'name': 'albumid', 'type': 'string', 'description': 'album id'}
+    ])
+            
+ttt = [ {'songno': '444',  'albumid': '444444', 
+        'rec': {'sub1':'abc4'}} ]
 
 pushResult = client.push_rows(DATABASE, TABLE, ttt, insert_id_key='songno')
 
