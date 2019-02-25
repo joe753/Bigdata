@@ -25,6 +25,7 @@ with conn_dooodb:
                 from MS_Song s inner join Album a on s.album_id = a.album_id'''
     cur.execute(sql_Song)
     row = cur.fetchall()
+    print (row)
     print ("== Finished getting data from mysql( table = MS_Song & Album ) ==")
 
 data = []
