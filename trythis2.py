@@ -32,17 +32,7 @@ with conn_dooodb:
                 cast(crawldt as char(30)) as crawldt from Album'''
     cur.execute(sql_Album)
     row2 = cur.fetchall()
-    print (row2)
     print ("== Finished getting data from mysql(table = Album) ==")
-
-
-
-# for i in row2:
-#     i['rating'] = float(i['rating'])
-#     i['releasedt'] = str(i['releasedt'])
-#     i['crawldt'] = str(i['crawldt'])
-
-
 
 client = bigquery.get_client(json_key_file='./bigquery.json', readonly=False)
 DATABASE = "bqdb"
